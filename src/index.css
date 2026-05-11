@@ -1,0 +1,369 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+.top-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.top-navbar h2 {
+  color: #00f2fe;
+  letter-spacing: 2px;
+}
+
+.top-navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.top-navbar li {
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s;
+}
+
+.top-navbar li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00f2fe;
+  bottom: -6px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.top-navbar li:hover {
+  color: #00f2fe;
+}
+
+.top-navbar li:hover::after {
+  width: 100%;
+}
+
+/* ================= MOBILE MENU ================= */
+.menu-btn {
+  display: none;
+  position: fixed;
+  top: 18px;
+  right: 25px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 260px;
+  height: 100vh;
+  background: #0f2027;
+  padding: 40px 25px;
+  transition: 0.4s ease;
+  z-index: 1200;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.close-btn {
+  font-size: 22px;
+  cursor: pointer;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.sidebar li {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar li:hover {
+  color: #00f2fe;
+  transform: translateX(10px);
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  padding: 120px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-text h3 {
+  color: #00f2fe;
+  font-size: 22px;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+}
+
+.hero-text span {
+  color: #00f2fe;
+}
+
+.role {
+  font-size: 20px;
+  margin: 15px 0 30px;
+  opacity: 0.85;
+}
+
+/* ================= BUTTONS ================= */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00f2fe, #4facfe);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+}
+
+.resume-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: 2px solid #00f2fe;
+  color: #00f2fe;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.resume-btn:hover {
+  background: #00f2fe;
+  color: #000;
+}
+
+/* ================= PROFILE IMAGE ================= */
+.hero-img {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(0, 242, 254, 0.5);
+  box-shadow: 0 0 40px rgba(0, 242, 254, 0.7);
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #00f2fe;
+}
+
+/* ================= SKILLS ================= */
+.skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.card {
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  animation: float 3.5s ease-in-out infinite;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  background: #00f2fe;
+  color: #000;
+}
+
+/* ================= PROJECTS ================= */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #00f2fe, transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.project-card:hover::before {
+  opacity: 0.2;
+}
+
+.project-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.4);
+}
+
+/* project buttons */
+.project-card::after {
+  content: "View  •  GitHub";
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.4s;
+  font-weight: 600;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact input,
+.contact textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* ================= ANIMATIONS ================= */
+.fade {
+  animation: fadeUp 1s ease forwards;
+}
+
+.zoom {
+  animation: zoomIn 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .top-navbar ul {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .section {
+    padding: 60px 30px;
+  }
+}
